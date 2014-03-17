@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Pbr-ck-yPN">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="v3v-u5-jY1">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Pbr-ck-yPN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vuZ-bX-GVC">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="ziK-h8-k6v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uwj-y6-gs8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-565" y="45"/>
+        </scene>
+        <!--Facebook Login View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="RCDFacebookLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imC-Vh-P7r">
+                                <rect key="frame" x="62" y="378" width="197" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="1rq-qZ-Pve"/>
+                                    <constraint firstAttribute="width" constant="197" id="Jj3-4P-b9c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Login With Facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="naa-Qy-gg2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in user Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1S-mF-510">
+                                <rect key="frame" x="18" y="349" width="284" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="284" id="nYF-Zv-KNC"/>
+                                    <constraint firstAttribute="height" constant="21" id="tbD-CA-a3I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="imC-Vh-P7r" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="3dB-vI-wjT"/>
+                            <constraint firstItem="imC-Vh-P7r" firstAttribute="top" secondItem="W1S-mF-510" secondAttribute="bottom" constant="8" id="XId-Ni-cQt"/>
+                            <constraint firstAttribute="centerX" secondItem="W1S-mF-510" secondAttribute="centerX" id="af7-h8-3iE"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="imC-Vh-P7r" secondAttribute="bottom" constant="147" id="cjN-bd-ctt"/>
+                            <constraint firstItem="imC-Vh-P7r" firstAttribute="top" secondItem="W1S-mF-510" secondAttribute="bottom" constant="8" id="fjy-GY-Gqg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="91L-Vd-hWl"/>
+                    <connections>
+                        <outlet property="loggedInUserLabel" destination="W1S-mF-510" id="r9k-X3-Xyo"/>
+                        <outlet property="loginButton" destination="imC-Vh-P7r" id="OzD-Hv-Tks"/>
+                        <segue destination="hef-Wc-Eu8" kind="push" identifier="ToFacebookFriendsListVC" id="uc8-48-oBK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-201" y="61"/>
+        </scene>
+        <!--Facebook Friends List View Controller-->
+        <scene sceneID="KNx-Qf-FdA">
+            <objects>
+                <viewController id="hef-Wc-Eu8" customClass="RCDFacebookFriendsListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qDW-iC-hY2"/>
+                        <viewControllerLayoutGuide type="bottom" id="E1Z-Lb-ldJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DYC-U2-Cvt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search Friends" translatesAutoresizingMaskIntoConstraints="NO" id="Puj-kj-SMT">
+                                <rect key="frame" x="0.0" y="65" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hef-Wc-Eu8" id="506-Fv-hJz"/>
+                                </connections>
+                            </searchBar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="myb-Y7-R3w">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZpY-Wr-AMT">
+                                <rect key="frame" x="0.0" y="109" width="320" height="459"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZOX-NN-Jux">
+                                    <size key="itemSize" width="319" height="70"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FBNameAndImageCell" id="Ht2-dP-qEN" customClass="RCDFacebookUserWithImageCell">
+                                        <rect key="frame" x="1" y="0.0" width="319" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="goB-fy-tes" userLabel="Profile pic Image View">
+                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="AKb-fq-J1d"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X96-yv-L1M" userLabel="name Label">
+                                                    <rect key="frame" x="87" y="24" width="218" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="X96-yv-L1M" secondAttribute="trailing" constant="14" id="IP4-Bt-re1"/>
+                                            <constraint firstItem="X96-yv-L1M" firstAttribute="top" secondItem="Ht2-dP-qEN" secondAttribute="top" constant="24" id="K1z-PY-ks5"/>
+                                            <constraint firstItem="goB-fy-tes" firstAttribute="leading" secondItem="Ht2-dP-qEN" secondAttribute="leading" id="RNQ-Mo-GId"/>
+                                            <constraint firstItem="X96-yv-L1M" firstAttribute="leading" secondItem="goB-fy-tes" secondAttribute="trailing" constant="17" id="gIc-HJ-dlq"/>
+                                            <constraint firstItem="goB-fy-tes" firstAttribute="top" secondItem="Ht2-dP-qEN" secondAttribute="top" id="nye-IH-NlO"/>
+                                            <constraint firstAttribute="bottom" secondItem="X96-yv-L1M" secondAttribute="bottom" constant="20" id="p0S-9b-bhf"/>
+                                            <constraint firstAttribute="bottom" secondItem="goB-fy-tes" secondAttribute="bottom" id="sQH-Vd-M8d"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Puj-kj-SMT" firstAttribute="top" secondItem="qDW-iC-hY2" secondAttribute="bottom" constant="1" id="5ku-A2-tDL"/>
+                            <constraint firstAttribute="centerY" secondItem="myb-Y7-R3w" secondAttribute="centerY" id="AGk-4r-Hjf"/>
+                            <constraint firstAttribute="bottom" secondItem="ZpY-Wr-AMT" secondAttribute="bottom" id="JyC-Dx-sFB"/>
+                            <constraint firstItem="ZpY-Wr-AMT" firstAttribute="centerX" secondItem="myb-Y7-R3w" secondAttribute="centerX" id="LZP-Wy-cmU"/>
+                            <constraint firstItem="ZpY-Wr-AMT" firstAttribute="leading" secondItem="DYC-U2-Cvt" secondAttribute="leading" id="QSb-CR-Crh"/>
+                            <constraint firstItem="ZpY-Wr-AMT" firstAttribute="top" secondItem="Puj-kj-SMT" secondAttribute="bottom" id="fn7-f6-mJ1"/>
+                            <constraint firstItem="ZpY-Wr-AMT" firstAttribute="leading" secondItem="Puj-kj-SMT" secondAttribute="leading" id="jR7-IG-wz6"/>
+                            <constraint firstItem="ZpY-Wr-AMT" firstAttribute="trailing" secondItem="Puj-kj-SMT" secondAttribute="trailing" id="jSe-Cj-MyB"/>
+                            <constraint firstAttribute="centerX" secondItem="myb-Y7-R3w" secondAttribute="centerX" id="otu-SG-hPo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yVX-bx-MCF"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="myb-Y7-R3w" id="MkT-7K-e2G"/>
+                        <outlet property="collectionView" destination="ZpY-Wr-AMT" id="dIZ-t5-0x4"/>
+                        <outlet property="searchBar" destination="Puj-kj-SMT" id="0AO-B0-FbU"/>
+                        <outlet property="searchDisplayController" destination="sQa-5h-jPh" id="Ti3-jd-HIr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rvj-Ro-4jD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="sQa-5h-jPh">
+                    <connections>
+                        <outlet property="delegate" destination="hef-Wc-Eu8" id="CWt-Wc-N1B"/>
+                        <outlet property="searchContentsController" destination="hef-Wc-Eu8" id="Ytl-Uy-SAJ"/>
+                        <outlet property="searchResultsDataSource" destination="hef-Wc-Eu8" id="m0L-C3-VcW"/>
+                        <outlet property="searchResultsDelegate" destination="hef-Wc-Eu8" id="RIl-7y-M1E"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="320" y="67"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
