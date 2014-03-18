@@ -41,10 +41,7 @@ static NSString* const RCDFacebookFriendsListVCIdentifier = @"ToFacebookFriendsL
 }
 
 - (void)performLogin {
-    
-    [self performSegueWithIdentifier:RCDFacebookFriendsListVCIdentifier sender:self];
-    return;
-    
+        
     [SVProgressHUD showWithStatus:@"Logging in..."];
     [self.facebookSessionManager loginWithPermissions:@"user_friends" completionHandler:^(BOOL isSuccessful, NSError *error) {
         [SVProgressHUD dismiss];
